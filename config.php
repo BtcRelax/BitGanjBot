@@ -64,7 +64,7 @@ return [
 
     // Enter your MySQL database credentials
      'mysql'        => [
-         'host'     => 'bot.fastfen.club',
+         'host'     => 'localhost',
          'user'     => 'telegrambot',
          'password' => 'fastfen',
          'database' => 'telegrambot',
@@ -72,9 +72,9 @@ return [
 
     // Logging (Debug, Error and Raw Updates)
      'logging'  => [
-         'debug'  => __DIR__ . '/php-telegram-bot-debug.log',
-         'error'  => __DIR__ . '/php-telegram-bot-error.log',
-         'update' => __DIR__ . '/php-telegram-bot-update.log',
+         'debug'  => __DIR__ . '/Logs/php-telegram-bot-debug.log',
+         'error'  => __DIR__ . '/Logs/php-telegram-bot-error.log',
+         'update' => __DIR__ . '/Logs/php-telegram-bot-update.log',
      ],
 
     // Set custom Upload and Download paths

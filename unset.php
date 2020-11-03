@@ -28,7 +28,8 @@ try {
     // Unset / delete the webhook
     $result = $telegram->deleteWebhook();
 
-    echo $result->getDescription();
+    header("Content-Type:application/json");
+    echo $result;
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     echo $e->getMessage();
 }

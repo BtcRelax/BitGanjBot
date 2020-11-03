@@ -1,22 +1,5 @@
 <?php
 
-/**
- * This file is part of the PHP Telegram Bot example-bot package.
- * https://github.com/php-telegram-bot/example-bot/
- *
- * (c) PHP Telegram Bot Team
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * This configuration file is used to run the bot with the webhook method.
- *
- * Please note that if you open this file with your browser you'll get the "Input is empty!" Exception.
- * This is perfectly normal and expected, because the hook URL has to be reached only by the Telegram servers.
- */
-
 // Load composer
 require_once __DIR__ . '/vendor/autoload.php';
 
