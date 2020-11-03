@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 // Load composer
 require_once __DIR__ . '/vendor/autoload.php';
@@ -42,14 +41,10 @@ try {
 
     // Handle telegram getUpdates request
     $server_response = $telegram->handleGetUpdates();
+    header("Content-Type:application/json");
+    echo json_encode($server_response);
+    
 
-    if ($server_response->isOk()) {
-        $update_count = count($server_response->getResult());
-        echo date('Y-m-d H:i:s') . ' - Processed ' . $update_count . ' updates';
-    } else {
-        echo date('Y-m-d H:i:s') . ' - Failed to fetch updates' . PHP_EOL;
-        echo $server_response->printError();
-    }
 
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // Log telegram errors

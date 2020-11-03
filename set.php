@@ -35,8 +35,8 @@ try {
 
     // To use a self-signed certificate, use this line instead
     // $result = $telegram->setWebhook($config['webhook']['url'], ['certificate' => $config['webhook']['certificate']]);
-
-    echo $result->getDescription();
+    header("Content-Type:application/json");
+    echo $result;
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     echo $e->getMessage();
 }

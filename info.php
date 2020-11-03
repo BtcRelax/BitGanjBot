@@ -7,8 +7,16 @@ $config = require __DIR__ . '/config.php';
 
 try { 
     $telegram = new Longman\TelegramBot\Telegram($config['api_key'], $config['bot_username']);
-    $result = $telegram->getVersion();
-    echo $result;
+    $result["Version"] = $telegram->getVersion();
+    $vUrl = sprintf('https://api.telegram.org/bot%s/getWebhookInfo',$config['api_key']);
+    $client = new \GuzzleHttp\Client();
+    $response = $client->request('GET', $vUrl);
+    if ($response->getStatusCode() == 200 ) 
+    {
+        $result["Body"] = json_decode($response->getBody());
+    }; 
+    header("Content-Type:application/json");
+    echo json_encode($result);
     
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // Log telegram errors
