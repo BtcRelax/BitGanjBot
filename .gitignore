@@ -3,3 +3,4 @@ composer.lock
 config.php
 vendor
 *.log
+/nbproject/private/

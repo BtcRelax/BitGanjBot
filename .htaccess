@@ -1,1 +1,6 @@
-DirectoryIndex info.php
+php_flag  xdebug.remote_enable on
+php_value xdebug.remote_host localhost
+php_value xdebug.remote_port 9004
+php_value xdebug.idekey "netbeans-xdebug"
+php_flag  xdebug.remote_autostart on
+php_value xdebug.remote_log "/var/www/BitGanjBot/Logs/xdebug.log"
